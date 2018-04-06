@@ -2,9 +2,9 @@ Rails.application.routes.draw do
   resources :todos do
     resources :items
   end
-  resources :shelf do
-    resources :pot do
-      resources :plant
+  resources :shelves do
+    resources :pots do
+      resources :plants
     end
   end
 end
