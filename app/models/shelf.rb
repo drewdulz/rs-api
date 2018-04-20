@@ -1,6 +1,6 @@
 class Shelf < ApplicationRecord
   # model association
-  has_many :pots, dependent: :destroy
+  has_many :pots
 
   # validations
   validates_presence_of :title
