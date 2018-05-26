@@ -7,6 +7,7 @@ Rails.application.routes.draw do
       resources :plants
     end
   end
+  resources :sensor_datum
 end
 
 
