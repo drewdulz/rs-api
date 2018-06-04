@@ -1,13 +1,16 @@
 Rails.application.routes.draw do
-  resources :todos do
-    resources :items
-  end
   resources :shelves do
     resources :pots do
       resources :plants
     end
   end
-  resources :sensor_datum
+  
+  resources :sensor_data
+  get '/sensor_data/range/:sensor_id', to: 'sensor_data#range'
+  get '/sensor_data/latest/:sensor_id', to: 'sensor_data#latest'
+
+  resources :sensors, only: [:show, :create, :index]
+  
 end
 
 

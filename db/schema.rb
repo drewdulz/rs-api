@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180526152541) do
+ActiveRecord::Schema.define(version: 20180604161311) do
 
   create_table "items", force: :cascade do |t|
     t.string "name"
@@ -30,7 +30,14 @@ ActiveRecord::Schema.define(version: 20180526152541) do
 
   create_table "sensor_data", force: :cascade do |t|
     t.float "value"
-    t.datetime "timeStamp"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "sensor_id"
+  end
+
+  create_table "sensors", force: :cascade do |t|
+    t.string "name"
+    t.string "sensor_type"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
