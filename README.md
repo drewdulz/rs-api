@@ -1,24 +1,33 @@
-# README
+# Rebel Sunshine API
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Hi! This is the  **Rebel Sunshine** API. It is built with Ruby on Rails.
 
-Things you may want to cover:
 
-* Ruby version
+# Getting Started
+1. Clone the Repo
+2. `bundle install`
+3. `rake db:migrate`
+4. `rails s`
+5. Go to localhost:3000
 
-* System dependencies
+# API Endpoints
+The Rebel Sunshine API is a comprehensive API for managing plant information and sensor data. The endpoints are as follows:
 
-* Configuration
+|                |ASCII                          |HTML                         |
+|----------------|-------------------------------|-----------------------------|
+|Single backticks|`'Isn't this fun?'`            |'Isn't this fun?'            |
+|Quotes          |`"Isn't this fun?"`            |"Isn't this fun?"            |
+|Dashes          |`-- is en-dash, --- is em-dash`|-- is en-dash, --- is em-dash|
 
-* Database creation
+## System Organization
 
-* Database initialization
+The relationship between plants, pots, shelves, sensors, and sensor data is as follows:
+```mermaid
+graph LR
+A[Square Rect] -- Link text --> B((Circle))
+A --> C(Round Rect)
+B --> D{Rhombus}
+C --> D
+```
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Readme generated with https://stackedit.io
