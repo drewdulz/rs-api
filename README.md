@@ -13,21 +13,12 @@ Hi! This is the  **Rebel Sunshine** API. It is built with Ruby on Rails.
 # API Endpoints
 The Rebel Sunshine API is a comprehensive API for managing plant information and sensor data. The endpoints are as follows:
 
-|                |ASCII                          |HTML                         |
-|----------------|-------------------------------|-----------------------------|
-|Single backticks|`'Isn't this fun?'`            |'Isn't this fun?'            |
-|Quotes          |`"Isn't this fun?"`            |"Isn't this fun?"            |
-|Dashes          |`-- is en-dash, --- is em-dash`|-- is en-dash, --- is em-dash|
+|Endpoint               |Description                                             |Usage
+|-----------------------|--------------------------------------------------------|-------------------------------------|
+|`Shelves`              |See all the shelves and all of their plants and sensors |`GET /shelves`                       |
+|`Shelves/:id`          |See a specific shelf                                    |`GET /shelves/:shelf_id`             |
+|`Latest Sensor Data`   |See the latest datapoint for a specified sensor         |`GET /sensor_data/latest/:sensor_id` |
+|`Range of Sensor Data` |See the sensro data between a range of timestamps       |`GET /sensor_data/range/:sensor_id`  |
+|-----------------------|--------------------------------------------------------|-------------------------------------|
 
-## System Organization
-
-The relationship between plants, pots, shelves, sensors, and sensor data is as follows:
-```mermaid
-graph LR
-A[Square Rect] -- Link text --> B((Circle))
-A --> C(Round Rect)
-B --> D{Rhombus}
-C --> D
-```
-
-Readme generated with https://stackedit.io
+For the Range of sensor data, you must pass a start and end timestamp (end timestamp will deafult to current time if none provided) like so: `/sensor_data/range/:sensor_id?start=2018-06-04T14:42:03.344Z&end=2018-06-04T14:52:03.524Z`
