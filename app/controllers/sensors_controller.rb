@@ -1,21 +1,23 @@
 class SensorsController < ApplicationController
   before_action :set_sensor, only: [:show]
+  before_action :set_plant
+
   
-  # GET /sensors
+  # GET /shelves/:shelf_id/pots/:pot_id/plants/:plant_id/sensors
+
   def index
-    @sensor = Sensor.all
-    json_response(@sensor)
+    json_response(@plant.sensors)
   end
   
-  # GET /sensors/:id
+  # GET /shelves/:shelf_id/pots/:pot_id/plants/:plant_id/sensors/:id
   def show
     json_response(@sensor)
   end
   
-  # POST /sensors
+  # POST /shelves/:shelf_id/pots/:pot_id/plants/:plant_id/sensors
   def create
-    @sensor = Sensor.create!(sensor_params)
-    json_response(@sensor)
+    @plant.sensors.create!(sensor_params)
+    json_response(@plant.sensors, :created)
   end
 
   private
@@ -26,6 +28,10 @@ class SensorsController < ApplicationController
   
   def set_sensor
     @sensor = Sensor.find(params[:id])
+  end
+
+  def set_plant
+    @plant = Plant.find(params[:plant_id])
   end
   
 end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180604161311) do
+ActiveRecord::Schema.define(version: 20180618194932) do
 
   create_table "items", force: :cascade do |t|
     t.string "name"
@@ -19,6 +19,13 @@ ActiveRecord::Schema.define(version: 20180604161311) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["todo_id"], name: "index_items_on_todo_id"
+  end
+
+  create_table "plants", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "pot_id"
   end
 
   create_table "pots", force: :cascade do |t|
@@ -40,10 +47,11 @@ ActiveRecord::Schema.define(version: 20180604161311) do
     t.string "sensor_type"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "plant_id"
   end
 
   create_table "shelves", force: :cascade do |t|
-    t.string "title"
+    t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

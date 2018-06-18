@@ -1,10 +1,11 @@
 Rails.application.routes.draw do
   resources :shelves do
     resources :pots do
-      resources :plants
+      resources :plants do
+        resources :sensors
+      end
     end
   end
-  
   resources :sensor_data
   get '/sensor_data/range/:sensor_id', to: 'sensor_data#range'
   get '/sensor_data/latest/:sensor_id', to: 'sensor_data#latest'
@@ -14,7 +15,7 @@ Rails.application.routes.draw do
 end
 
 
-#  shelf -> pot -> plant1                                                         
-#  |        |  `-> plant2                                                         
-#  |        `-> moisture                                                          
+#  shelf -> pot -> plant1
+#  |        |  `-> plant2
+#  |        `-> moisture
 #  `-> light

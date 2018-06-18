@@ -9,7 +9,7 @@ class PotsController < ApplicationController
 
   # GET /shelves/:shelf_id/pots/:id
   def show
-    json_response(@pot)
+    render json: @pot, include: 'plants'
   end
 
   # POST /shelves/:shelf_id/pots

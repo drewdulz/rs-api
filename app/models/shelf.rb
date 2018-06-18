@@ -3,5 +3,5 @@ class Shelf < ApplicationRecord
   has_many :pots
 
   # validations
-  validates_presence_of :title
+  validates_presence_of :name
 end

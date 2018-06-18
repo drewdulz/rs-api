@@ -1,10 +1,22 @@
 class ShelvesController < ApplicationController
-    before_action :set_shelf, only: [:show, :update, :destroy]
+  before_action :set_shelf, only: [:show, :update, :destroy]
 
   # GET /shelves
   def index
     @shelves = Shelf.all
-    json_response(@shelves)
+    # json_response(@shelves)
+    # render json: @shelves, include: 'pots'
+    render :json => @shelves, 
+    :include => {
+      :pots => {
+        :include => {
+          :plants => {
+            :include => :sensors
+          }
+        }
+      }
+    }
+
   end
 
   # POST /shelves
@@ -15,7 +27,7 @@ class ShelvesController < ApplicationController
 
   # GET /shelves/:id
   def show
-    json_response(@shelf)
+    render json: @shelf, include: 'pots'
   end
 
   # PUT /shelves/:id
@@ -34,7 +46,7 @@ class ShelvesController < ApplicationController
 
   def shelf_params
     # whitelist params
-    params.permit(:title)
+    params.permit(:name)
   end
 
   def set_shelf
