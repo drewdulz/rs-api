@@ -19,6 +19,6 @@ The Rebel Sunshine API is a comprehensive API for managing plant information and
 |`Shelves/:id`          |See a specific shelf                                    |`GET /shelves/:shelf_id`             |
 |`Latest Sensor Data`   |See the latest datapoint for a specified sensor         |`GET /sensor_data/latest/:sensor_id` |
 |`Range of Sensor Data` |See the sensro data between a range of timestamps       |`GET /sensor_data/range/:sensor_id`  |
-|-----------------------|--------------------------------------------------------|-------------------------------------|
+
 
 For the Range of sensor data, you must pass a start and end timestamp (end timestamp will deafult to current time if none provided) like so: `/sensor_data/range/:sensor_id?start=2018-06-04T14:42:03.344Z&end=2018-06-04T14:52:03.524Z`
