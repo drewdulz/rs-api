@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe ShelvesController, type: :controller do
+RSpec.describe PotsController, type: :controller do
   
   
   # Test suite for GET /todos/:todo_id/items
@@ -30,5 +30,5 @@ RSpec.describe ShelvesController, type: :controller do
     end
   end
 
-
+  
 end

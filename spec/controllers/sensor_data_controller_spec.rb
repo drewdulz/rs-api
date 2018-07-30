@@ -1,9 +1,9 @@
 require 'rails_helper'
 
-RSpec.describe ShelvesController, type: :controller do
-  
-  
-  # Test suite for GET /todos/:todo_id/items
+RSpec.describe SensorDataController, type: :controller do
+
+
+    # Test suite for GET /todos/:todo_id/items
   describe 'GET /todos/:todo_id/items' do
     before { get "/todos/#{todo_id}/items" }
 
@@ -30,5 +30,5 @@ RSpec.describe ShelvesController, type: :controller do
     end
   end
 
-
+  
 end
